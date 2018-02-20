@@ -4,4 +4,6 @@ FROM sagemath/sagemath:8.0-2
 # Make sure the contents of our repo are in ${HOME}
 COPY . ${HOME}
 
-# RUN sage -pip install .
+RUN git clone https://github.com/nthiery/sage-semigroups/; \
+    cd sage-semigroups; \
+    sage -pip install .
